@@ -15,11 +15,10 @@
     --accent:#e85a4f;        /* 主色（珊瑚紅 / 紅橘） */
     --accent-2:#ff6f50;
     --muted:#6b6b6b;
-    --blue-accent:#4a8bbd;
-    --bg:#ffffff;
+    --bg:#ffffff;           /* 灰白純色封面需求 */
     --card:#ffffff;
     --shadow: 0 10px 30px rgba(0,0,0,0.08);
-    --maxw:880px;
+    --maxw:880px;           /* 桌機寬度調整為 880px */
     --glass: rgba(255,255,255,0.98);
     --radius:12px;
     --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
@@ -30,7 +29,7 @@
   body{
     margin:0;
     font-family:var(--font-sans);
-    background:linear-gradient(180deg,#f9f9f9,#f3f3f4);
+    background:linear-gradient(180deg,#f9f9f9,#f3f3f4); /* 灰白純色漸層（非常 subtle） */
     color:#222;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
@@ -41,7 +40,7 @@
   a{color:var(--accent);text-decoration:none;}
   img{max-width:100%;height:auto;display:block;}
 
-/* ---------- Container ---------- */
+  /* ---------- Container ---------- */
   .wrap{
     width:100%;
     max-width:var(--maxw);
@@ -54,82 +53,81 @@
     border:1px solid rgba(0,0,0,0.04);
   }
 
-/* ---------- Typography hierarchy ---------- */
+  /* ---------- Typography hierarchy ---------- */
   h1{font-size:1.9rem;margin:0;color:#111;line-height:1.02;font-weight:900;letter-spacing:-0.02em;}
   h2{font-size:1.05rem;margin:0;color:var(--accent);font-weight:900;}
   h3{font-size:0.98rem;margin:0;color:#333;font-weight:800;}
   p{margin:8px 0;color:#222;line-height:var(--line);font-size:0.98rem;}
   small, .note{font-size:0.88rem;color:var(--muted);line-height:1.4;}
+
+  /* smaller adjustments for lists inside cards */
   ul{margin:6px 0 0 18px;color:#333;line-height:1.5;}
 
-/* ---------- Cover / Hero ---------- */
-  .cover{display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap;}
+  /* ---------- Cover / Hero ---------- */
+  .cover{
+    display:flex;
+    gap:16px;
+    align-items:center;
+    margin-bottom:12px;
+    flex-wrap:wrap;
+  }
   .cover-left{flex:1 1 420px;}
   .cover-right{width:220px;min-width:180px;text-align:right;}
   .title-main{font-weight:900;}
   .title-sub{margin-top:6px;color:var(--muted);font-size:0.98rem;}
 
   .hero{
-    margin:0 0 8px 0;border-radius:12px;overflow:hidden;position:relative;min-height:140px;display:flex;align-items:center;justify-content:flex-start;color:#222;background:linear-gradient(180deg,#fbfbfb,#f4f4f5);border:1px solid rgba(0,0,0,0.02);padding:18px;
+    margin:0 0 8px 0;
+    border-radius:12px;
+    overflow:hidden;
+    position:relative;
+    min-height:140px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    color:#222;
+    background:linear-gradient(180deg,#fbfbfb,#f4f4f5); /* 灰白乾淨 */
+    border:1px solid rgba(0,0,0,0.02);
+    padding:18px;
   }
   .hero .inner{position:relative;z-index:2;width:100%;}
   .hero p.lead{margin:6px 0 0 0;color:var(--muted);font-weight:700;}
-  .hero-sign{position:absolute;right:14px;bottom:10px;font-size:0.82rem;color:var(--muted);font-weight:700;opacity:0.9;}
 
-/* ---------- Route maps (cards) - replaced & unified ---------- */
-  .maps{display:flex;gap:12px;margin:14px 0 8px;align-items:stretch;flex-wrap:wrap;}
+  .hero-sign{
+    position:absolute;right:14px;bottom:10px;font-size:0.82rem;color:var(--muted);font-weight:700;opacity:0.9;
+  }
+
+  /* ---------- Route maps (cards) ---------- */
+  .maps{
+    display:flex;
+    gap:12px;
+    margin:14px 0 8px;
+    align-items:stretch;
+    flex-wrap:wrap;
+  }
   .map-card{
     background:#fff;border-radius:12px;padding:12px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 6px 18px rgba(0,0,0,0.04);
-    display:flex;gap:12px;align-items:center;flex:1 1 360px;text-decoration:none;color:inherit;transition:transform .14s,box-shadow .14s;
+    display:flex;gap:12px;align-items:center;flex:1 1 360px;
   }
-  .map-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(0,0,0,0.08);}
-  .map-card .thumb{
-	width: 88px;
-	height: 64px;
-	flex: 0 0 88px;
-	border-radius: 8px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--blue-accent);
-	font-weight: 800;
-	font-size: 1.02rem;
-	border: 1px dashed rgba(0,0,0,0.03);
-	background: linear-gradient(180deg,#fff,#f6fbff);
-}
+  .map-card .thumb{width:88px;height:64px;flex:0 0 88px;background:#f4f4f4;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;font-size:0.8rem;border:1px dashed rgba(0,0,0,0.03);}
   .map-card .meta{flex:1;}
   .map-card .meta .t{font-weight:800;color:#222;font-size:0.95rem;}
-  .map-card .meta small{display:block;margin-top:6px;color:var(--muted);font-size:0.88rem;}
+  .map-card .meta small{display:block;margin-top:6px;color:var(--muted);}
 
-/* ---------- Nav ---------- */
+  /* ---------- Nav ---------- */
   nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
   nav a{background:#fff;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--accent);border:1px solid #fff2f0;font-weight:800;font-size:0.92rem;box-shadow:0 4px 12px rgba(232,90,79,0.04);}
 
-/* ---------- Overview (replaced) ---------- */
-  .overview{
-	margin-top: 6px;
-	background: rgb(255 255 255);
-	padding: 10px 12px;
-	border-radius: 10px;
-	font-size: 0.92rem;
-	color: #222;
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	border-left: 4px solid rgba(217, 75, 43, 0.06);
-	flex-wrap: wrap;
-  }
-  .overview .label{font-weight:800;color:var(--accent);min-width:84px;}
-  .overview .list{font-size:0.92rem;color:#222222;line-height:1.38;display:flex;flex-direction:column;gap:6px;}
+  .overview{margin-top:6px;background:linear-gradient(90deg,#fffaff,#fffaf5);border-left:6px solid var(--accent-2);padding:12px;border-radius:10px;font-size:0.95rem;color:#222;}
 
-/* ---------- Day card ---------- */
+  /* ---------- Day card ---------- */
   section.day{margin-top:40px;padding-top:6px;border-top:1px dashed rgba(0,0,0,0.04);}
   .day-header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;}
   .day-title{background:var(--card);padding:12px 14px;border-radius:10px;border-left:6px solid var(--accent);box-shadow: 0 6px 18px rgba(0,0,0,0.04);display:flex;flex-direction:column;}
   .day-title h2{font-size:1.02rem;}
   .day-title p{margin-top:6px;color:var(--muted);font-size:0.92rem;font-weight:700;}
 
-/* ---------- Time axis ---------- */
+  /* ---------- Time axis ---------- */
   .time-axis{margin-top:12px;}
   .time-row{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;margin-top:12px;}
   .time-row .t{color:var(--accent);font-weight:900;background:linear-gradient(180deg,#fff,#fff7f7);padding:10px;border-radius:10px;text-align:center;font-size:0.96rem;}
@@ -138,20 +136,21 @@
   .c p{margin:6px 0;color:#333;line-height:1.6;}
   .small{font-size:0.9rem;color:var(--muted);}
 
-/* ---------- Map / Button ---------- */
+  /* ---------- Map / Button ---------- */
   .btn{display:inline-block;margin-left:6px;padding:8px 12px;background:#fff;color:var(--accent);text-decoration:none;border-radius:10px;font-size:0.92rem;border:1px solid rgba(128,0,0,0.04);box-shadow:0 6px 12px rgba(128,0,0,0.04);transition:transform .16s,box-shadow .16s;}
   .btn:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(128,0,0,0.08);background:var(--accent);color:#fff;border-color:transparent;}
 
-/* ---------- References / Links ---------- */
+  /* ---------- References / Links ---------- */
   .refs{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
   .refs .ref{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,0.03);position:relative;overflow:hidden;}
   .refs .ref a{color:var(--accent);text-decoration:none;font-weight:800;}
   .refs .ref small{display:block;color:var(--muted);margin-top:6px;font-weight:500;}
+
   .links-list{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
   .links-list a{display:block;padding:10px;border-radius:8px;background:#fff;border-left:4px solid #ffecec;text-decoration:none;color:#222;font-weight:800;}
   .links-list small{display:block;color:var(--muted);margin-top:6px;font-weight:500;}
 
-/* ---------- YouTube cards (16:9 thumbs) ---------- */
+  /* ---------- YouTube cards (16:9 thumbs) ---------- */
   .yt-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;align-items:flex-start;padding-bottom:8px;}
   .yt-card{
     background:#fafafa;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.05);
@@ -162,29 +161,41 @@
     position:relative;
   }
   .yt-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 38px rgba(0,0,0,0.12);}
+  /* modern 16:9 thumbnails */
   .yt-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#ddd;}
   .yt-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .28s;}
   .yt-card:hover .yt-thumb img{transform:scale(1.06);}
   .yt-meta{padding:12px;font-size:0.95rem;}
   .yt-meta .t{font-weight:900;color:#222;margin-bottom:6px;display:block;font-size:0.96rem;line-height:1.2;}
   .yt-meta .d{font-size:0.86rem;color:var(--muted);line-height:1.3;}
+
   .play-overlay{position:absolute;right:10px;top:10px;background:rgba(0,0,0,0.45);color:#fff;padding:6px 8px;border-radius:999px;font-weight:800;font-size:0.95rem;}
 
-/* ---------- Aside (replaced) ---------- */
+  /* ---------- Aside & Footer ---------- */
   .aside{margin-top:18px;background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:10px;border-left:6px solid #4a7fa6;box-shadow:0 6px 16px rgba(0,0,0,0.03);}
-  .aside-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .aside .h{font-weight:800;color:var(--accent);margin-bottom:6px;}
-  .transport ul{margin:0 0 0 18px;}
-  .accommodation p{margin:0;color:#111;}
-
-/* ---------- Footer & Back to top ---------- */
   footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center;padding:12px 0;}
+
+  /* ---------- Back to top button ---------- */
   .backtop{
-    position:fixed;right:18px;bottom:22px;background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#fff;border-radius:999px;padding:10px 12px;box-shadow:0 10px 30px rgba(232,90,79,0.18);font-weight:900;border:0;cursor:pointer;z-index:9999;display:flex;gap:8px;align-items:center;
+    position:fixed;
+    right:18px;
+    bottom:22px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-2));
+    color:#fff;
+    border-radius:999px;
+    padding:10px 12px;
+    box-shadow:0 10px 30px rgba(232,90,79,0.18);
+    font-weight:900;
+    border:0;
+    cursor:pointer;
+    z-index:9999;
+    display:flex;
+    gap:8px;
+    align-items:center;
   }
   .backtop:focus{outline:3px solid rgba(232,90,79,0.14);}
 
-/* ---------- Responsive tweaks ---------- */
+  /* ---------- Responsive tweaks ---------- */
   @media (max-width:980px){
     :root{ --maxw:92vw; }
     .refs{grid-template-columns:1fr;}
@@ -192,7 +203,6 @@
     .hero{min-height:120px;}
     .yt-card{flex:1 1 calc(50% - 12px);max-width:46%;}
     .map-card{flex:1 1 48%;}
-    .overview{gap:10px;}
   }
   @media (max-width:720px){
     body{padding:12px;}
@@ -205,8 +215,6 @@
     .map-card{flex-basis:100%;}
     .wrap{padding:14px;}
     p{font-size:0.95rem;line-height:1.7;}
-    .aside-grid{grid-template-columns:1fr;}
-    .overview{flex-direction:column;align-items:flex-start;}
   }
 </style>
 </head>
@@ -234,28 +242,16 @@
     <!-- ROUTE MAPS (JR / Metro) -->
     <div class="maps" aria-label="路線圖參考">
       <a class="map-card" href="https://www.jreast.co.jp/tc/info/map_a4ol.pdf" target="_blank" rel="noopener noreferrer" title="JR東日本路線圖（PDF）">
-        <div class="thumb" aria-hidden="true">
-          <svg width="54" height="36" viewBox="0 0 54 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false">
-            <rect rx="6" width="54" height="36" fill="#fff"></rect>
-            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="14" font-weight="900" fill="#4a8bbd" font-family="Arial, Helvetica, sans-serif">JR</text>
-          </svg>
-        </div>
+        <div class="thumb" aria-hidden="true">JR</div>
         <div class="meta">
           <div class="t">JR東日本路線圖</div>
-          <small>PDF — 建議下載於手機離線查看。</small>
         </div>
       </a>
 
       <a class="map-card" href="https://www.tokyometro.jp/station/pdf/202305/202305_number_tcn.pdf" target="_blank" rel="noopener noreferrer" title="東京 Metro 地鐵路線圖（PDF）">
-        <div class="thumb" aria-hidden="true">
-          <svg width="54" height="36" viewBox="0 0 54 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false">
-            <rect rx="6" width="54" height="36" fill="#fff"></rect>
-            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="12.5" font-weight="900" fill="#4a8bbd" font-family="Arial, Helvetica, sans-serif">Metro</text>
-          </svg>
-        </div>
+        <div class="thumb" aria-hidden="true">Metro</div>
         <div class="meta">
-          <div class="t">東京 Metro 路線圖</div>
-          <small>車站編號與轉乘提示。</small>
+          <div class="t">東京 Metro 地鐵路線圖</div>
         </div>
       </a>
     </div>
@@ -269,19 +265,12 @@
       <a href="#day5">Day5｜01/24</a>
     </nav>
 
-    <!-- OVERVIEW -->
-<div class="overview" role="region" aria-label="快速概覽">
-  <div class="label">快速概覽</div>
-  <div class="list" aria-hidden="false">
-    <span><strong>Day1：</strong>抵達 · 錦糸町入住</span>
-    <span><strong>Day2：</strong>銀座 → 表參道/原宿 → 澀谷（精品、潮流、夜景）</span>
-    <span><strong>Day3：</strong>鎌倉 → 江之島 → 橫濱（古都、海景、港未來夜景）</span>
-    <span><strong>Day4：</strong>上野阿美橫丁 → 東京站一番街 → 川崎（市場、伴手禮/美食、異國風）</span>
-    <span><strong>Day5：</strong>晴空塔 → 錦糸町購物 → 前往成田（地標、收尾）</span>
-  </div>
-</div>
+    <div class="overview" role="region" aria-label="快速概覽">
+      <strong>快速概覽（主題）</strong><br>
+      Day1：抵達・錦糸町夜散 — Day2：鎌倉（歷史）→ 橫濱（港灣）→ 川崎（夜景） — Day3：銀座（精品 & 水族）→ 東京車站一番街 → 表參道/原宿 → 澀谷 — Day4：吉祥寺 → 下北澤 → 新宿（文青 & 夜生活） — Day5：阿美橫丁 → 晴空塔 → 錦糸町購物 → 前往成田。
+    </div>
 
-    <!-- DAY1 (保留原本) -->
+    <!-- DAY1 -->
     <section id="day1" class="day" aria-labelledby="day1title">
       <div class="day-header">
         <div class="day-title">
@@ -330,662 +319,402 @@
       </div>
     </section>
 
-<!-- DAY2 (已更新文案、移除東京車站一番街) -->
-<section id="day2" class="day" aria-labelledby="day2title">
-  <div class="day-header">
-    <div class="day-title">
-      <h2 id="day2title">Day2｜2026/01/21（三） 銀座 → 表參道 / 原宿 → 澀谷</h2>
-      <p>主題：銀座精品 × 藝術水族館 × 原宿潮流 × 澀谷夜景</p>
-    </div>
-    <div>
-      <a class="btn" href="https://maps.app.goo.gl/LD3SdiS3pRT4YQ7n6" target="_blank" rel="noopener noreferrer">🗺️ 銀座地圖</a>
-      <a class="btn" href="https://maps.app.goo.gl/ydpZvJtCVCS6Qfp56" target="_blank" rel="noopener noreferrer">🗺️ 表參道/原宿</a>
-      <a class="btn" href="https://maps.app.goo.gl/eWWTs9VfqvJ2UA178" target="_blank" rel="noopener noreferrer">🗺️ 澀谷地圖</a>
-    </div>
-  </div>
-
-  <div class="time-axis" aria-label="Day2 時間軸">
-    <div class="time-row">
-      <div class="t">09:00</div>
-      <div class="c">
-        <div class="title">從錦糸町出發 → 抵達銀座</div>
-        <p>交通建議：錦糸町 → 地下鐵半藏門線 → 三越前 / 銀座線 → 銀座站。建議 09:00 後出門，避開通勤高峰；銀座百貨多數 10:00 開門。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">10:00–12:30</div>
-      <div class="c">
-        <div class="title">銀座：GINZA SIX / 銀座三越 / 藝術水族館</div>
-        <p>重點：逛百貨、旗艦店與伴手禮。建議景點：<br>
-          <a href="https://ginza6.tokyo/" target="_blank" rel="noopener noreferrer">GINZA SIX</a>（<a href="https://maps.app.goo.gl/GgMRQ6vxBgXTjaFBA" target="_blank" rel="noopener noreferrer">地圖</a>）— 國際精品、設計品牌、特色餐廳。<br>
-          <a href="https://www.mitsukoshi.mistore.jp/ginza.html" target="_blank" rel="noopener noreferrer">銀座三越</a>（<a href="https://maps.app.goo.gl/tVim1Yi53cwqwxMG9" target="_blank" rel="noopener noreferrer">地圖</a>）— 傳統日系百貨，伴手禮與限定商品。<br>
-          <a href="https://artaquarium.jp/" target="_blank" rel="noopener noreferrer">銀座藝術水族館（Art Aquarium Museum）</a>— 建議預先購票欣賞金魚造景與藝術燈光（<a href="https://maps.app.goo.gl/cu6khWy6HVwBBAhk7" target="_blank" rel="noopener noreferrer">地圖</a>）。</p>
-        <p>🔹 午餐建議：銀座百貨餐廳或附近咖啡廳，品嚐日式甜點與輕食。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">12:30–14:30</div>
-      <div class="c">
-        <div class="title">移動 → 原宿 / 表參道</div>
-        <p>原宿竹下通（潮流小店、甜點）、表參道（精品旗艦店、設計咖啡廳、建築街景）。建議時間充裕，慢慢逛街拍照。<br>
-        <a href="https://www.omotesandohills.com/" target="_blank" rel="noopener noreferrer">表參道Hills</a>（<a href="https://maps.app.goo.gl/2ir72sVaHecP4q9CA" target="_blank" rel="noopener noreferrer">地圖</a>）、<a href="https://www.tokyu-plaza.com/harajuku/" target="_blank" rel="noopener noreferrer">東急PLAZA原宿 HARAKADO</a>（<a href="https://maps.app.goo.gl/4kU5NoEKwMzzcfVK8" target="_blank" rel="noopener noreferrer">地圖</a>）。</p>
-        <p>🔹 午茶 / 小點心建議：原宿甜點店或表參道咖啡廳，享受日式創意甜品。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">14:30–17:00</div>
-      <div class="c">
-        <div class="title">原宿 / 表參道深度探索</div>
-        <p>可安排：明治神宮參拜、原宿潮流店巡禮、街拍拍照或特色文創店探索。保留時間自由彈性，依照當日人潮與興趣調整。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">17:00–20:30</div>
-      <div class="c">
-        <div class="title">澀谷夜景與美食探索</div>
-        <p>建議路線：<a href="https://www.shibuya-scramble-square.jp/" target="_blank" rel="noopener noreferrer">澀谷 Scramble Square</a>（<a href="https://maps.app.goo.gl/qk7ttMuCMExQ6n6J8" target="_blank" rel="noopener noreferrer">地圖</a>）→ <a href="https://www.shibuyasky.com/" target="_blank" rel="noopener noreferrer">Shibuya Sky</a>（<a href="https://maps.app.goo.gl/RCB8y8d1s2mXiEvE7" target="_blank" rel="noopener noreferrer">地圖</a>）→ <a href="https://www.miyashita-park.tokyo/" target="_blank" rel="noopener noreferrer">宮下公園 / MIYASHITA PARK</a>（<a href="https://maps.app.goo.gl/LT8xnqsTkRPJdccSA" target="_blank" rel="noopener noreferrer">地圖</a>）→ <a href="https://shibuya.parco.jp.t.aiv.hp.transer.com/" target="_blank" rel="noopener noreferrer">澀谷PARCO</a>（<a href="https://maps.app.goo.gl/GgMRQ6vxBgXTjaFBA" target="_blank" rel="noopener noreferrer">地圖</a>） / 109 → 晚餐 & 夜景。晚餐建議在宮下公園或澀谷站周邊。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">20:30–21:30</div>
-     <div class="c">
-      <div class="title">返回錦糸町</div>
-      <p>澀谷 → 半藏門線直達錦糸町（約 30–35 分鐘），不用換車。回程可在車站商圈覓宵夜，結束充實的一日。</p>
-     </div>
-    </div>
-  </div>
-
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片</div>
-  <div class="yt-row" data-section="shibuya-ginza" aria-label="Day2 影片區">
-    <a class="yt-card" href="https://youtu.be/7eLjH5d9N44" target="_blank" rel="noopener noreferrer" title="原宿Harajuku｜竹下通、表參道、明治通">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/7eLjH5d9N44/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">原宿Harajuku｜竹下通、表參道、明治通</span><span class="d">原宿逛街聖地、明治神宮與美妝旗艦店介紹</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/BJstTguOF6g" target="_blank" rel="noopener noreferrer" title="『日本旅遊』東京自由行澀谷區Ep.3 澀谷攻略">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/BJstTguOF6g/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">『日本旅遊』東京自由行澀谷區Ep.3 澀谷攻略</span><span class="d">藍瓶咖啡、PARCO 等澀谷商圈導覽</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/AVNPQHsvAFg" target="_blank" rel="noopener noreferrer" title="澀谷景點必買必吃一次看（4K vlog）">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/AVNPQHsvAFg/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">澀谷景點必買必吃一次看（4K vlog）</span><span class="d">甜甜圈、品牌店、澀谷美食直擊</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/_x_ohb_hlNY" target="_blank" rel="noopener noreferrer" title="澀谷｜Tokyo Street View（Shibuya highlights）">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/_x_ohb_hlNY/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">澀谷｜Tokyo Street View（Shibuya highlights）</span><span class="d">澀谷街景實拍、Shibuya Sky 介紹</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/tUn6ZpDwxfs" target="_blank" rel="noopener noreferrer" title="澀谷攻略｜Shibuya Sky、交通與行程說明">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/tUn6ZpDwxfs/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">澀谷攻略｜Shibuya Sky、交通與行程說明</span><span class="d">展望台、餐廳與交通安排建議</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/fKxfW2nC2tg" target="_blank" rel="noopener noreferrer" title="東京銀座必逛10選（UNIQLO、伊東屋、GINZA SIX）">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/fKxfW2nC2tg/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">東京銀座必逛10選（UNIQLO、伊東屋、GINZA SIX）</span><span class="d">銀座步行者天國、旗艦店與下午茶推薦</span></div></div>
-    </a>
-  </div>
-
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">網站文章（參考）</div>
-  <div class="links-list">
-    <a href="https://tokyo.letsgojp.com/archives/87833/" target="_blank" rel="noopener noreferrer">銀座景點地圖2025（LetsGoJP）</a>
-    <small>銀座必去景點、百貨與美食懶人包。</small>
-    <a href="https://bobbyfun.tw/art-aquarium-museum/" target="_blank" rel="noopener noreferrer">銀座藝術水族館（Art Aquarium）介紹（BobbyFun）</a>
-    <small>展覽資訊與參觀建議（建議先訂票）。</small>
-  </div>
-</section>
-
-<!-- DAY3 (最終優化版，含 lang 屬性與微調文案) -->
-<section id="day3" class="day" aria-labelledby="day3title" lang="zh-Hant">
-  <div class="day-header">
-    <div class="day-title">
-      <h2 id="day3title">Day3｜2026/01/22（四）鎌倉 → 江之島 → 橫濱（古都 × 海景 × 港灣夜色）</h2>
-      <p>主題：歷史文化 × 海島散策 × 港未來夜景</p>
-    </div>
-    <div>
-      <a class="btn" href="https://maps.app.goo.gl/aSvEaNAS8wE98CGU9" target="_blank" rel="noopener noreferrer">🗺️ 鎌倉地圖</a>
-      <a class="btn" href="https://maps.app.goo.gl/KmnP7CFtf8ke8ejJ7" target="_blank" rel="noopener noreferrer">🗺️ 江之島地圖</a>
-      <a class="btn" href="https://maps.app.goo.gl/JeFkK7vPYRDK8vUy5" target="_blank" rel="noopener noreferrer">🗺️ 橫濱地圖</a>
-	  <a class="btn" href="https://maps.app.goo.gl/dpfz7Cb7BzBDJCfu9" target="_blank" rel="noopener noreferrer">🗺️ 川崎</a>
-    </div>
-  </div>
-
-  <div class="time-axis" aria-label="Day3 時間軸">
-    <div class="time-row">
-      <div class="t">08:30</div>
-       <div class="c">
-         <div class="title">從錦糸町出發 → 前往鎌倉</div>
-         <p>
-           交通建議（約 70～90 分鐘）：<br>
-           錦糸町 → JR JO總武線快速（直通橫須賀線）→ 鎌倉。<br>
-           列車於東京站後直通橫須賀線，無需轉乘；建議 09:00 後出發可避開通勤人潮。
-         </p>
-       </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">10:00–12:30</div>
-      <div class="c">
-        <div class="title">鎌倉散策：小町通 × 鶴岡八幡宮</div>
-        <p>
-          小町通商店街：鎌倉人氣吃街與伴手禮集散地。推薦蒟蒻串、蕨餅、大佛燒、和菓子。<br>
-          📍 <a href="https://bobbyfun.tw/komachidori/" target="_blank" rel="noopener noreferrer">小町通介紹</a><br>
-          鶴岡八幡宮：鎌倉代表神社，穿過參道可欣賞古樸建築與祈福氛圍。<br>
-          ⛩️ 官方網站：<a href="https://www.hachimangu.or.jp/" target="_blank" rel="noopener noreferrer">hachimangu.or.jp</a>
-        </p>
-        <p>🔹 延伸建議：<br>
-          高德院大佛（Kotoku-in）：鎌倉象徵地標，靜謐莊嚴。📍 <a href="https://www.kotoku-in.jp/" target="_blank" rel="noopener noreferrer">kotoku-in.jp</a><br>
-          鎌倉高校前平交道：《灌籃高手》取景地，經典拍照地點。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">12:40–14:00</div>
-      <div class="c">
-        <div class="title">移動 → 江之島（午餐建議於江之島享用）</div>
-        <p>交通：鎌倉 → 江之電（Enoden）→ 江之島站（約 30 分鐘）。沿途欣賞湘南海岸電車風光。<br>
-        推薦美食：龜屋半兵衛章魚仙貝、湘南海鮮丼「とびっちょ」、江之島冰淇淋、章魚丸燒餅。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">14:00–15:30</div>
-      <div class="c">
-        <div class="title">江之島散步 × 弁財天仲見世通 × 江之島神社</div>
-        <p>弁財天仲見世通：充滿海鮮燒烤與在地甜點的熱鬧街道。<br>
-        江之島神社：主祀弁財天，沿著階梯可遠眺湘南海岸，氣氛悠閒。<br>
-        📍 <a href="https://bobbyfun.tw/enoshima/" target="_blank" rel="noopener noreferrer">江之島介紹</a><br>
-        若時間充裕，可登上「江之島海蠟燭展望台」欣賞海灣全景。</p>
-		 <p class="alt-note">
-      📌 <strong>可替代安排：</strong><br>
-         若當日時間較緊或天候不佳，可略過江之島段落，提早前往橫濱港未來區，<br>
-         再將原訂第 4 天的 <strong>川崎行程（LAZONA／KAWASUI／LA CITTADELLA）</strong> 提前安排。<br>
-         川崎站距離橫濱僅約 10 分鐘車程，交通便利，可順遊購物與水族館景點。
-        </p> 
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">15:30–16:30</div>
-     <div class="c">
-      <div class="title">移動 → 橫濱港未來區（約 1 小時）</div>
-       <p>江之島 → 江之島電鐵線 → 藤澤 → JR 東海道本線（或湘南新宿線）→ 橫濱。<br>
-       建議傍晚前抵達港未來區，預留時間欣賞夜景與購物。</p>
-     </div>
-    </div>
-
-<div class="time-row">
-  <div class="t">16:30–20:30</div>
-  <div class="c">
-    <div class="title">橫濱夜景散策：港未來 × 紅磚倉庫 × 摩天輪</div>
-    <p>
-      行程建議路線：<br>
-      <a href="https://maps.app.goo.gl/6Ey1HhjfHFFaFSBX6" target="_blank" rel="noopener noreferrer">橫濱站</a> → 
-      <a href="https://maps.app.goo.gl/Pt1jGe4KgdT4iZGJ6" target="_blank" rel="noopener noreferrer">櫻木町站</a> →
-      <a href="https://www.yokohama-air-cabin.jp/" target="_blank" rel="noopener noreferrer">YOKOHAMA AIR CABIN（空中纜車）</a> →
-      <a href="https://maps.app.goo.gl/rocfZCRRbbKKYhtN8" target="_blank" rel="noopener noreferrer">紅磚倉庫 🏠</a> →
-      <a href="https://maps.app.goo.gl/Xfh823hYYHNAtnxf6" target="_blank" rel="noopener noreferrer">COSMOWORLD 🎡</a> →
-      <a href="https://maps.app.goo.gl/m7wkQbTcMf5ZrnJx9" target="_blank" rel="noopener noreferrer">World Porters</a> ／ 
-      <a href="https://maps.app.goo.gl/Di9yn8bTqPAibasz9" target="_blank" rel="noopener noreferrer">Hammerhead</a>
-    </p>
-
-    <p>
-      景點亮點：<br>
-      ・橫濱空中纜車：高空俯瞰港灣夜色與摩天輪。<br>
-      ・<a href="https://www.yokohama-akarenga.jp/" target="_blank" rel="noopener noreferrer">紅磚倉庫</a>：百年文創建築、設計選物與甜點咖啡廳。<br>
-      ・<a href="https://cosmoworld.jp/" target="_blank" rel="noopener noreferrer">COSMOWORLD 摩天輪</a>：經典夜景地標，夜間點燈璀璨。<br>
-      ・World Porters／Hammerhead：海景餐廳與購物商場，適合夜間散步。
-    </p>
-
-    <p>
-      備用景點：
-      <a href="https://maps.app.goo.gl/V5ZQpgsBBo7pXgXN7" target="_blank" rel="noopener noreferrer">元町商店街 🏬</a>、
-      <a href="https://maps.app.goo.gl/24A33yc59UmTD6eK9" target="_blank" rel="noopener noreferrer">中華街 🍜</a>
-      （適合晚餐或咖啡時光）
-    </p>
-  </div>
-</div>
-
-    <div class="time-row">
-      <div class="t">20:30–21:30</div>
-       <div class="c">
-         <div class="title">返回錦糸町</div>
-         <p>下午從橫濱返回錦糸町，可選兩種路線（皆需換一次車）：<br>
-          ▸ 東海道線 → 東京站 → JR 總武快速線 → 錦糸町<br>
-          ▸ 京濱東北線 → 秋葉原 → 中央‧總武線各站停車 → 錦糸町<br>
-          兩條線時間相近，依當下班次與人潮彈性選擇。回程可於車站商圈覓食宵夜，為充實豐富的一日畫下完美句點。</p>
-       </div>
-    </div>
-  </div>
-
-  <!-- Day3 影片區 -->
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片（鎌倉 / 江之島 / 橫濱）</div>
-  <div class="yt-row" data-section="kawasaki-yokohama" aria-label="Day3 影片區">
-    <a class="yt-card" href="https://youtu.be/--VbKEUkjTE" target="_blank" rel="noopener noreferrer" title="鐮倉Kamakura&江之島Enoshima｜350元一日券暢玩7景點｜灌籃高手取景平交道、鶴岡八幡宮、鐮倉大佛、小町通商店街">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/--VbKEUkjTE/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">鐮倉Kamakura&江之島Enoshima｜350元一日券暢玩7景點</span><span class="d">灌籃高手取景平交道、鶴岡八幡宮、鎌倉大佛、小町通商店街</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/ngjzkVmxdOY" target="_blank" rel="noopener noreferrer" title="鎌倉古都散策🚃&浪漫橫濱夜景🎡｜鶴岡八幡宮•鎌倉高校前平交道•江之島•橫濱空中纜車•紅磚倉庫">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/ngjzkVmxdOY/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">鎌倉古都散策 & 浪漫橫濱夜景</span><span class="d">江之島與橫濱夜景實拍路線</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/v3wTSMfXmL0" target="_blank" rel="noopener noreferrer" title="橫濱YOKOHAMA｜日本最大中華街、元町商店街、必吃象鼻冰淇淋｜橫濱美食、購物">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/v3wTSMfXmL0/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">橫濱YOKOHAMA｜中華街、元町、象鼻冰淇淋</span><span class="d">橫濱美食與購物路線</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/0d0pfKVk6ZA" target="_blank" rel="noopener noreferrer" title="川崎購物超便利｜10分鐘到橫濱！LAZONA / Le Front / LA CITTADELLA">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/0d0pfKVk6ZA/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">川崎購物超便利｜10分鐘到橫濱！</span><span class="d">快速逛川崎三大商場，結合購物與異國街景</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/giZ8dGREMYY" target="_blank" rel="noopener noreferrer" title="《日本旅遊》橫濱一日遊行程分享">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/giZ8dGREMYY/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">《日本旅遊》橫濱一日遊行程分享</span><span class="d">摩天輪、紅磚倉庫、中華街、元町商店街</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/iU9-mhKVXYs" target="_blank" rel="noopener noreferrer" title="橫濱一日遊：港未來夜景、摩天輪">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/iU9-mhKVXYs/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">橫濱一日遊：港未來夜景、摩天輪</span><span class="d">夜景、浪漫約會聖地特輯</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/i3MMBjYIDkw" target="_blank" rel="noopener noreferrer" title="走遍橫濱一日遊散策">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/i3MMBjYIDkw/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">走遍橫濱一日遊散策</span><span class="d">步行散策橫濱經典景點全收錄</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/KlF1VIU_tIM" target="_blank" rel="noopener noreferrer" title="鎌倉江之電一日遊">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/KlF1VIU_tIM/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">鎌倉江之電一日遊</span><span class="d">江之電沿線精華路線介紹</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/jzLw-xmoiHA" target="_blank" rel="noopener noreferrer" title="東京1小時直達！鎌倉・江之島 ¥800 一日券玩法">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/jzLw-xmoiHA/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">東京1小時直達！鎌倉・江之島 ¥800 一日券玩法</span><span class="d">票券與順遊路線參考</span></div></div>
-    </a>
-  </div>
-
-  <!-- Day3 參考連結 -->
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">網站文章（參考閱讀）</div>
-  <div class="links-list">
-    <a href="https://bobbyfun.tw/komachidori/" target="_blank" rel="noopener noreferrer">鎌倉小町通商店街｜逛街、伴手禮與必吃（BobbyFun）</a>
-    <small>小町通必吃推薦與散策指南。</small>
-
-    <a href="https://www.kotoku-in.jp/" target="_blank" rel="noopener noreferrer">高德院（鎌倉大佛｜Kotoku-in）</a>
-    <small>大佛參觀資訊與歷史介紹。</small>
-
-    <a href="https://www.hachimangu.or.jp/" target="_blank" rel="noopener noreferrer">鶴岡八幡宮（官方）</a>
-    <small>參拜資訊與活動公告。</small>
-
-    <a href="https://bobbyfun.tw/enoshima/" target="_blank" rel="noopener noreferrer">江之島散策推薦（BobbyFun）</a>
-    <small>弁財天仲見世通與島上美食介紹。</small>
-
-    <a href="https://www.yokohama-akarenga.jp/" target="_blank" rel="noopener noreferrer">橫濱紅磚倉庫（官方）</a>
-    <small>活動、展覽與商店資訊。</small>
-
-    <a href="https://cosmoworld.jp/" target="_blank" rel="noopener noreferrer">COSMOWORLD（官方）</a>
-    <small>摩天輪與園區資訊。</small>
-  </div>
-</section>
-
-<!-- DAY4 (新版：錦糸町 → 上野 → 阿美橫丁 → 東京站一番街 → 川崎) -->
-<section id="day4" class="day" aria-labelledby="day4title">
-  <div class="day-header">
-    <div class="day-title">
-      <h2 id="day4title">Day4｜2026/01/23（五） 錦糸町 → 上野阿美橫丁 → 東京站一番街 → 川崎</h2>
-      <p>主題：在地市場 × 經典車站 × 異國風購物街（建議順序：上野 → 東京站 → 川崎）</p>
-    </div>
-    <div>
-      <a class="btn" href="https://maps.app.goo.gl/FW1mkRRX1jeHp5GH6" target="_blank" rel="noopener noreferrer">🗺️ 阿美橫丁</a>
-      <a class="btn" href="https://maps.app.goo.gl/2fszCrTFd5UqbKPC7" target="_blank" rel="noopener noreferrer">🗺️ 東京車站一番街</a>
-      <a class="btn" href="https://maps.app.goo.gl/dpfz7Cb7BzBDJCfu9" target="_blank" rel="noopener noreferrer">🗺️ 川崎</a>
-    </div>
-  </div>
-
-<div class="time-axis" aria-label="Day4 時間軸">
-  <div class="time-row">
-    <div class="t">08:30–09:00</div>
-    <div class="c">
-      <div class="title">出發｜錦糸町 → 阿美橫丁（御徒町）</div>
-      <p>建議路線：錦糸町站搭 JR 總武線至秋葉原，轉乘 JR 山手線或京濱東北線至御徒町站，全程約 25 分鐘。御徒町站南口即為阿美橫丁入口，動線順暢不繞路。</p>
-    </div>
-  </div>
-
-  <div class="time-row">
-    <div class="t">09:00–13:00</div>
-    <div class="c">
-      <div class="title">阿美橫丁（上野 Ameyoko）逛市集</div>
-      <p>早晨市場漫遊，感受東京庶民風情。阿美橫丁位於上野與御徒町間的鐵道下方，販售藥妝、乾貨、零食與小吃，氣氛熱鬧充滿人情味。建議早點前往以避開人潮，慢慢逛街挑選伴手禮。</p>
-
-      <p><strong>推薦必逛店家：</strong>多慶屋（Takeya）與二木菓子（Nikinokashi）。</p>
-      <ul class="small">
-        <li><a href="https://www.takeya.co.jp/" target="_blank" rel="noopener noreferrer">多慶屋（Takeya）官方網站</a> — 藥妝、零食與名牌 OUTLET 一站購足。</li>
-        <li><a href="https://bobbyfun.tw/2024-01-04-2648/" target="_blank" rel="noopener noreferrer">二木菓子資訊（BobbyFun）</a> — 熱門零食、糖果與伴手禮介紹。</li>
-        <li><a href="https://finduheart.com/nikinokashi" target="_blank" rel="noopener noreferrer">二木菓子營業時間＆退稅方式（Find U Heart）</a> — 店鋪位置、營業時間、退稅流程詳細說明。</li>
-      </ul>
-      <p><a href="https://www.ameyoko.net/" target="_blank" rel="noopener noreferrer">阿美橫丁官方資訊</a></p>
-    </div>
-  </div>
-
-  <div class="time-row">
-    <div class="t">13:30–15:30</div>
-    <div class="c">
-      <div class="title">東京站一番街（伴手禮天堂／美食街）</div>
-      <p>從御徒町站搭 JR 山手線或京濱東北線至東京站（約 10 分鐘）。探索「東京車站一番街」，可購買東京芭娜娜、New York Perfect Cheese、雪茄蛋捲等人氣伴手禮。<br>
-      ※若想保留更多時間逛川崎，東京站一番街可視情況省略或僅簡短停留。</p>
-      <p><a href="https://www.tokyostationcity.com/information/" target="_blank" rel="noopener noreferrer">東京車站地圖</a>｜<a href="https://www.tokyoeki-1bangai.co.jp/assets/pdf/floorMap.pdf" target="_blank" rel="noopener noreferrer">一番街樓層圖</a></p>
-    </div>
-  </div>
-
-  <div class="time-row">
-    <div class="t">16:30–20:30</div>
-    <div class="c">
-      <div class="title">川崎（LAZONA／KAWASUI／LA CITTADELLA）</div>
-      <p>從東京站搭 JR 東海道本線直達川崎站（約 18 分鐘），交通最順。抵達後可一次遊覽三大地標：<br>
-        ▸ <b><a href="https://mitsui-shopping-park.com/lazona-kawasaki/" target="_blank" rel="noopener noreferrer">LAZONA川崎廣場
-</a>：</b>集結 UNIQLO、Loft、BicCamera 等人氣品牌的大型購物中心。（<a href="https://maps.app.goo.gl/DvRicr1Ab3Z1Wik37" target="_blank" rel="noopener noreferrer">地圖</a>）<br>
-        ▸ <b><a href="https://kawa-sui.com/" target="_blank" rel="noopener noreferrer">KAWASUI 川崎水族館</a>：</b>適合晚間短遊，內有沉浸式光影展區。<a href="https://www.lefront.jp/" target="_blank" rel="noopener noreferrer">川崎Le FRONT</a>內10樓。（<a href="https://maps.app.goo.gl/A29ASz6zpSoXHHpV9" target="_blank" rel="noopener noreferrer">地圖</a>）<br>
-        ▸ <b><a href="https://lacittadella.co.jp/" target="_blank" rel="noopener noreferrer">Le Cittadella</a>
-：</b>義大利風街區、露天廣場、夜景浪漫，是川崎代表性地標，晚餐與散步皆宜。（<a href="https://maps.app.goo.gl/zu2kw3Jr6Fj6SgZf8" target="_blank" rel="noopener noreferrer">地圖</a>）</p>
-    </div>
-  </div>
-
-  <div class="time-row">
-    <div class="t">20:30–21:00</div>
-    <div class="c">
-      <div class="title">返回錦糸町</div>
-      <p>
-        建議路線：川崎 →（JR 京濱東北線）→ 秋葉原 →（中央・總武線各停）→ 錦糸町，全程約 35 分鐘，轉乘動線順暢、人潮較少。<br>
-        備用路線：川崎 →（JR 東海道本線）→ 東京 →（總武線快速）→ 錦糸町，約 30 分鐘可達，但東京站轉乘距離較遠，尖峰時段略擁擠。
-      </p>
-    </div>
-  </div>
-</div>
-
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片</div>
-  <div class="yt-row" id="day4-videos" aria-label="Day4 影片區">
-    <a class="yt-card" href="https://youtu.be/aZPvMvdAdcU" target="_blank" rel="noopener noreferrer" title="東京車站一番街必買伴手禮攻略">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/aZPvMvdAdcU/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">東京站一番街伴手禮攻略</span><span class="d">必買甜點、人氣美食與路線建議</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/xNwyp6hVMME" target="_blank" rel="noopener noreferrer" title="川崎 LA CITTADELLA 春日慶典">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/xNwyp6hVMME/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">川崎 LA CITTADELLA</span><span class="d">春日慶典與夜景街區，披薩與甜點滿滿異國感</span></div></div>
-    </a>
-
-    <a class="yt-card" href="https://youtu.be/0d0pfKVk6ZA" target="_blank" rel="noopener noreferrer" title="川崎購物超便利｜10分鐘到橫濱！LAZONA / Le Front / LA CITTADELLA">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/0d0pfKVk6ZA/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">川崎購物三合一</span><span class="d">LAZONA、Le Front、LA CITTADELLA 一日逛法</span></div></div>
-    </a>
-	  
-   <a class="yt-card" href="https://youtu.be/EEVgJxiQlvI" target="_blank" rel="noopener noreferrer" title="上野阿美橫完全路線攻略">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/EEVgJxiQlvI/maxresdefault.jpg" alt="上野阿美橫完全路線攻略縮圖"></div>
-      <div class="meta-wrap">
-        <div class="yt-meta">
-          <span class="t">上野阿美橫攻略</span>
-          <span class="d">阿美橫路線圖、觀光客建議與必買清單</span>
+    <!-- DAY2 -->
+    <section id="day2" class="day" aria-labelledby="day2title">
+      <div class="day-header">
+        <div class="day-title">
+          <h2 id="day2title">Day2｜2026/01/21（三） 鎌倉 → 橫濱 → 川崎</h2>
+          <p>主題：歷史文化（鎌倉）× 港灣浪漫（橫濱）× 現代商業（川崎）</p>
+        </div>
+        <div>
+          <a class="btn" href="https://maps.app.goo.gl/aSvEaNAS8wE98CGU9" target="_blank" rel="noopener noreferrer">🗺️ 鎌倉地圖</a>
+          <a class="btn" href="https://maps.app.goo.gl/JeFkK7vPYRDK8vUy5" target="_blank" rel="noopener noreferrer">🗺️ 橫濱地圖</a>
+          <a class="btn" href="https://maps.app.goo.gl/kHA6SgsDpaxsVHsA8" target="_blank" rel="noopener noreferrer">🗺️ 川崎地圖</a>
         </div>
       </div>
-    </a>
 
-    <a class="yt-card" href="https://youtu.be/yDxaS32g3vU" target="_blank" rel="noopener noreferrer" title="阿美橫實拍">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/yDxaS32g3vU/maxresdefault.jpg" alt="阿美橫實拍影片縮圖"></div>
-      <div class="meta-wrap">
-        <div class="yt-meta">
-          <span class="t">阿美橫實拍</span>
-          <span class="d">阿美橫丁市集實拍</span>
+      <div class="time-axis" aria-label="Day2 時間軸">
+        <div class="time-row">
+          <div class="t">08:30</div>
+          <div class="c">
+            <div class="title">從錦糸町出發 → 前往鎌倉（交通建議）</div>
+            <p class="small">推薦路線（方便、轉乘少）：</p>
+            <ul>
+              <li><strong>錦糸町 → JR 線（總武快速 / Sobu Rapid）→ 東京（或品川）→ 轉乘JR橫須賀線/湘南新宿ライン→ 鎌倉</strong>：通常需在東京或品川轉乘橫須賀線；從錦糸町直達鎌倉並無單一路線，故建議以東京或品川轉乘為主（轉車一次）。</li>
+              <li><strong>替代：錦糸町 → 地下鐵/都營轉乘至新宿/品川 → 乘橫須賀線直達鎌倉</strong>：視路線與時刻表選擇，轉乘次數相近。</li>
+            </ul>
+            <p class="small" style="margin-top:8px;">車程總時間約 60–90 分鐘（視轉乘與列車類型）。若想省時，可提早查好轉乘站（東京或品川）與橫須賀線時刻。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">10:15–12:30</div>
+          <div class="c">
+            <div class="title">鎌倉 小町通（Komachi-dori）＋鶴岡八幡宮</div>
+            <p>小町通吃街、伴手禮與老店多，推薦試蒟蒻、和菓子與大佛燒。鶴岡八幡宮散步與參拜拍照（短程即可）。若時間允許或想走海邊，可以將江之島列為備用行程。</p>
+            <p class="small">建議出口/站口：鎌倉站 東口 → 步行至小町通入口（北口/東口方向）。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">12:40–14:00</div>
+          <div class="c">
+            <div class="title">移動 → 橫濱（午餐建議在橫濱）</div>
+            <p class="small">從鎌倉搭 JR 或江之電前往橫濱（約 40–60 分鐘）。抵達後前往紅磚倉庫或中華街享用中式美食。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">14:30–16:30</div>
+          <div class="c">
+            <div class="title">橫濱紅磚倉庫 × 元町商店街 × 中華街</div>
+            <p>紅磚倉庫逛文創小店、元町買特色小物、中華街提前排隊吃晚餐或小吃。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">17:00–19:00</div>
+          <div class="c">
+            <div class="title">前往川崎 → LAZONA / KAWASUI / LA CITTADELLA</div>
+            <p>LAZONA 購物、KAWASUI（川崎水族館）適合晚間短遊，Le Cittadella（義大利風街區）可拍夜景、用餐。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">20:30</div>
+          <div class="c">
+            <div class="title">返回錦糸町</div>
+            <p class="small">晚間返回東京，約 21:30 抵達；視情況調整回程時間。</p>
+          </div>
         </div>
       </div>
-    </a>
 
-    <a class="yt-card" href="https://youtu.be/ghvdOVYZRVE" target="_blank" rel="noopener noreferrer" title="上野自由行攻略">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/ghvdOVYZRVE/maxresdefault.jpg" alt="上野自由行攻略影片縮圖"></div>
-      <div class="meta-wrap">
-        <div class="yt-meta">
-          <span class="t">上野美食與景點</span>
-          <span class="d">上野美食與景點整理</span>
+      <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片</div>
+      <div class="yt-row" data-section="kawasaki-yokohama" aria-label="Day2 影片區">
+        <a class="yt-card" href="https://youtu.be/0d0pfKVk6ZA" target="_blank" rel="noopener noreferrer" title="川崎購物超便利｜10分鐘到橫濱！LAZONA / Le Front / LA CITTADELLA">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/0d0pfKVk6ZA/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">川崎購物超便利｜10分鐘到橫濱！LAZONA / Le Front / LA CITTADELLA</span><span class="d">快速逛川崎三大商場，結合購物與異國街景</span></div></div>
+        </a>
+
+        <a class="yt-card" href="https://youtu.be/giZ8dGREMYY" target="_blank" rel="noopener noreferrer" title="《日本旅遊》橫濱一日遊行程分享">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/giZ8dGREMYY/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">《日本旅遊》橫濱一日遊行程分享</span><span class="d">摩天輪、紅磚倉庫、中華街、元町商店街</span></div></div>
+        </a>
+
+        <a class="yt-card" href="https://youtu.be/iU9-mhKVXYs" target="_blank" rel="noopener noreferrer" title="橫濱一日遊：港未來夜景、摩天輪">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/iU9-mhKVXYs/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">橫濱一日遊：港未來夜景、摩天輪</span><span class="d">夜景、浪漫約會聖地特輯</span></div></div>
+        </a>
+
+        <a class="yt-card" href="https://youtu.be/i3MMBjYIDkw" target="_blank" rel="noopener noreferrer" title="走遍橫濱一日遊散策">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/i3MMBjYIDkw/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">走遍橫濱一日遊散策</span><span class="d">步行散策橫濱經典景點全收錄</span></div></div>
+        </a>
+
+        <a class="yt-card" href="https://youtu.be/KlF1VIU_tIM" target="_blank" rel="noopener noreferrer" title="鎌倉江之電一日遊">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/KlF1VIU_tIM/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">鎌倉江之電一日遊</span><span class="d">江之電沿線精華路線介紹</span></div></div>
+        </a>
+
+        <a class="yt-card" href="https://youtu.be/jzLw-xmoiHA" target="_blank" rel="noopener noreferrer" title="東京1小時直達！鎌倉・江之島 ¥800 一日券玩法">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/jzLw-xmoiHA/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">東京1小時直達！鎌倉・江之島 ¥800 一日券玩法</span><span class="d">票券與順遊路線參考</span></div></div>
+        </a>
+      </div>
+
+      <div style="margin-top:12px;font-weight:900;color:var(--accent);">網站文章（參考閱讀）</div>
+      <div class="links-list">
+        <a href="https://tokyo.letsgojp.com/archives/94657/" target="_blank" rel="noopener noreferrer">「川崎」一日購物地圖：比 OUTLET 還好逛</a>
+        <small>川崎在地購物導覽。</small>
+
+        <a href="https://bobbyfun.tw/2024-01-19-2767/" target="_blank" rel="noopener noreferrer">【橫濱一日遊2025】橫濱景點行程、交通美食全攻略</a>
+        <small>紅磚倉庫、中華街、元町等詳盡整理。</small>
+
+        <!-- 新加入：鎌倉相關網站文章（你要求插入的三筆） -->
+        <a href="https://gototravel.tw/kamakura-komachi-dori-street/" target="_blank" rel="noopener noreferrer">鎌倉小町通商店街逛街吃美食、參拜古色古香的鶴岡八幡宮（GoToTravel）</a>
+        <small>小町通逛街、美食與鶴岡八幡宮參拜散策介紹。</small>
+
+        <a href="https://www.bring-you.info/zh-tw/wakamiya-oji-street" target="_blank" rel="noopener noreferrer">【鎌倉逛街】江之電鎌倉車站：若宮大路と小町通 伴手禮街必買名產推薦（Bring-You）</a>
+        <small>若宮大路與小町通周邊的伴手禮與散策路線推薦。</small>
+
+        <a href="https://bobbyfun.tw/komachidori/" target="_blank" rel="noopener noreferrer">【鎌倉】小町通商店街：Top12美食必買推薦！大佛燒、咖哩麵包、釜飯大滿足（BobbyFun）</a>
+        <small>小町通人氣小吃與必買清單整理。</small>
+		  
+        <a href="https://www.ctrls5460.com/kamakura/" target="_blank" rel="noopener noreferrer">【神奈川鎌倉】鎌倉小町通リ・鎌倉小町通商店街 — 300 多家特色店鋪匯集，老字號與人氣甜點共演的鎌倉美食街（CtrlS5460）</a>
+        <small>鎌倉小町通超過 300 家店鋪，傳統風味與現代甜點交織的散策推薦。</small>		  
+      </div>
+    </section>
+
+    <!-- DAY3 -->
+    <section id="day3" class="day" aria-labelledby="day3title">
+      <div class="day-header">
+        <div class="day-title">
+          <h2 id="day3title">Day3｜2026/01/22（四） 銀座 → 東京車站一番街 → 表參道 / 原宿 → 澀谷</h2>
+          <p>主題：銀座精品 × 藝術水族館 × 原宿潮流 × 澀谷夜景</p>
+        </div>
+        <div>
+          <a class="btn" href="https://maps.app.goo.gl/LD3SdiS3pRT4YQ7n6" target="_blank" rel="noopener noreferrer">🗺️ 銀座地圖</a>
+          <a class="btn" href="https://maps.app.goo.gl/2fszCrTFd5UqbKPC7" target="_blank" rel="noopener noreferrer">🗺️ 東京車站一番街</a>
+          <a class="btn" href="https://maps.app.goo.gl/ydpZvJtCVCS6Qfp56" target="_blank" rel="noopener noreferrer">🗺️ 表參道/原宿</a>
+          <a class="btn" href="https://maps.app.goo.gl/eWWTs9VfqvJ2UA178" target="_blank" rel="noopener noreferrer">🗺️ 澀谷地圖</a>
         </div>
       </div>
-    </a>	  
-  </div>
 
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考文章</div>
-  <div class="links-list">
-    <a href="https://bobbyfun.tw/2024-03-06-3075/" target="_blank" rel="noopener noreferrer">【2025東京站一番街】東京車站必買伴手禮＆美食攻略（BobbyFun）</a>
-    <small>伴手禮與熱門甜點詳細路線圖。</small>
+      <div class="time-axis" aria-label="Day3 時間軸">
+        <div class="time-row">
+          <div class="t">09:00</div>
+          <div class="c">
+            <div class="title">從錦糸町出發 → 抵達銀座</div>
+            <p class="small">建議 09:00 後出門，避開 07:30–09:00 通勤高峰；銀座百貨多數 10:00 開門。</p>
+          </div>
+        </div>
 
-    <a href="https://tokyo.letsgojp.com/archives/94657/" target="_blank" rel="noopener noreferrer">「川崎」一日購物地圖：比 OUTLET 還好逛</a>
-    <small>川崎三大商場與在地購物導覽。</small>
+        <div class="time-row">
+          <div class="t">10:00–12:00</div>
+          <div class="c">
+            <div class="title">銀座：GINZA SIX / 銀座三越</div>
+            <p>逛重點百貨、旗艦店與伴手禮。有意參觀「銀座藝術水族館（Art Aquarium Museum）」建議預先購票。</p>
+          </div>
+        </div>
 
-    <a href="https://finduheart.com/nikinokashi" target="_blank" rel="noopener noreferrer">上野阿美橫町二木菓子購物攻略</a>
-    <small>熱門零食推薦與退稅方式。</small>
+        <div class="time-row">
+          <div class="t">12:30–13:30</div>
+          <div class="c">
+            <div class="title">移動 → 東京車站一番街（伴手禮 / 拉麵街）</div>
+            <p class="small">可快速採買伴手禮或在拉麵街用餐。建議 45–60 分鐘。</p>
+          </div>
+        </div>
 
-    <a href="https://bobbyfun.tw/2024-01-05-2670/" target="_blank" rel="noopener noreferrer">阿美橫丁：最夯美食藥妝、交通</a>
-    <small>必買必吃逛街地圖全攻略</small>
-	  
-    <a href="https://tokyo.letsgojp.com/archives/328552/" target="_blank" rel="noopener noreferrer">多慶屋購物與免稅優惠介紹</a>
-    <small>多慶屋88折優惠、藥妝與名牌折扣資訊。</small>	  
-  </div>
-</section>
-	  
+        <div class="time-row">
+          <div class="t">14:30–16:30</div>
+          <div class="c">
+            <div class="title">移動 → 原宿 / 表參道（竹下通 / 表參道Hills）</div>
+            <p>原宿竹下通：潮流與年輕小店；表參道：精品與特色咖啡廳。</p>
+          </div>
+        </div>
 
-	  
-<!-- ================================================== -->
-<!-- DAY4-B（支線版：上野動物園 × 不忍池 × 家庭路線） -->
-<!-- ================================================== -->
-<section id="day4-alt" class="day" aria-labelledby="day4alt-title">
-  <div class="day-header">
-    <div class="day-title">
-      <h2 id="day4alt-title">Day4（支線方案）｜錦糸町 → 上野動物園 → 不忍池散步</h2>
-      <p>主題：家庭同遊 × 綠意散步 × 都會自然日（建議順序：錦糸町 → 上野公園）</p>
-      <p class="sub-note">※ 姐姐一家預計前往上野動物園，可視當日狀況自由決定是否同行與會合。</p>
-    </div>
-    <div>
-      <a class="btn" href="https://maps.app.goo.gl/FgKZjFBGpWVJhQgSA" target="_blank" rel="noopener noreferrer">🗺️ 上野動物園</a>
-      <a class="btn" href="https://maps.app.goo.gl/TXyGMTkFzm3dBSXN7" target="_blank" rel="noopener noreferrer">🗺️ 不忍池</a>
-      <a class="btn" href="https://maps.app.goo.gl/FW1mkRRX1jeHp5GH6" target="_blank" rel="noopener noreferrer">🗺️ 阿美橫丁</a>
-    </div>
-  </div>
-
-  <div class="time-axis">
-    <div class="time-row">
-      <div class="t">08:30–09:00</div>
-      <div class="c">
-        <div class="title">出發｜錦糸町 → 上野動物園</div>
-        <p>從錦糸町站搭 JR 總武線至秋葉原，轉乘 JR 山手線至上野站，全程約 25 分鐘。上野站「公園口」出站後步行約 5 分鐘即可抵達動物園入口。</p>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">09:30–13:00</div>
-      <div class="c">
-        <div class="title">上野動物園 × 不忍池散步</div>
-        <p>日本最古老、最具代表性的動物園，人氣動物包括熊貓「香香」家族 🐼。園區分為東園與西園，設有單軌列車連通，適合親子與家庭同遊。可順道前往不忍池租天鵝船或散步，感受都會中的自然綠意。</p>
-        <ul class="small">
-          <li><strong>開放時間：</strong>09:30–17:00（售票至16:00）</li>
-          <li><strong>休園日：</strong>每週一（遇國定假日則順延至隔日休園）</li>
-          <li><strong>票價資訊：</strong>成人600日圓／65歲以上300日圓／13–15歲200日圓／12歲以下免費</li>
-          <li><a href="https://www.tokyo-zoo.net/chinese/ueno/index.html" target="_blank" rel="noopener noreferrer">上野動物園中文指南（官方）</a></li>
-		  <li><a href="https://www.tokyo-zoo.net/chinese/pdf/map_ueno_international.pdf" target="_blank" rel="noopener noreferrer">園內地圖</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">13:00–14:30</div>
-      <div class="c">
-        <div class="title">上野公園周邊午餐建議</div>
-        <p>可於上野公園周邊餐廳用餐，例如：</p>
-        <ul class="small">
-          <li><strong>韻松亭</strong> — 百年老店豆皮懷石料理。</li>
-          <li><strong>星乃咖啡</strong> — 厚鬆餅與日式早午餐。</li>
-          <li><strong>上野之森 PARK SIDE CAFE</strong> — 坐擁公園綠蔭的歐風咖啡館。</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="time-row">
-      <div class="t">14:30–17:00</div>
-      <div class="c">
-        <div class="title">彈性行程建議</div>
-        <p>可延伸散步至「阿美橫丁」繼續逛街，或返回錦糸町休息。若家人同行，可依當日情況自由分流行動。</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:16px;font-weight:900;color:var(--accent);"> 參考影片</div>
-  <div class="yt-row" id="day4alt-videos" aria-label="Day4 支線影片區">
-    <a class="yt-card" href="https://youtu.be/fQgPU7MCNPk" target="_blank" rel="noopener noreferrer" title="上野動物園一日遊行程">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/fQgPU7MCNPk/maxresdefault.jpg" alt="上野動物園影片縮圖"></div>
-      <div class="meta-wrap">
-        <div class="yt-meta">
-          <span class="t">上野動物園一日遊行程</span>
-          <span class="d">熊貓香香、天鵝船與不忍池散步｜by Jiu Jiu</span>
+        <div class="time-row">
+          <div class="t">17:00–20:30</div>
+          <div class="c">
+            <div class="title">澀谷（Scramble Square / PARCO / 109 / Shibuya Sky）</div>
+            <p>若想看澀谷景觀建議前往 Shibuya Scramble Square / Shibuya Sky（視開放時間）。</p>
+          </div>
         </div>
       </div>
-    </a>
-  </div>
 
-  <div style="margin-top:16px;font-weight:900;color:var(--accent);"> 參考文章</div>
-  <div class="links-list">
-    <a href="https://www.tokyo-zoo.net/zoo/ueno/" target="_blank" rel="noopener noreferrer">上野動物園官方網站（TokyoZooNet）</a>
-    <small>開放時間、票價、地圖與交通資訊。</small>
+      <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片</div>
+      <div class="yt-row" data-section="shibuya-ginza" aria-label="Day3 影片區">
+        <a class="yt-card" href="https://youtu.be/7eLjH5d9N44" target="_blank" rel="noopener noreferrer" title="原宿Harajuku｜竹下通、表參道、明治通">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/7eLjH5d9N44/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">原宿Harajuku｜竹下通、表參道、明治通</span><span class="d">原宿逛街聖地、明治神宮與美妝旗艦店介紹</span></div></div>
+        </a>
 
-    <a href="https://bobbyfun.tw/2024-02-12-2926/" target="_blank" rel="noopener noreferrer">【2025上野景點】上野必去一日遊這樣玩！（BobbyFun）</a>
-    <small>阿美橫丁、上野公園、不忍池一日路線建議。</small>
+        <a class="yt-card" href="https://youtu.be/BJstTguOF6g" target="_blank" rel="noopener noreferrer" title="『日本旅遊』東京自由行澀谷區Ep.3 澀谷攻略">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/BJstTguOF6g/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">『日本旅遊』東京自由行澀谷區Ep.3 澀谷攻略</span><span class="d">藍瓶咖啡、PARCO 等澀谷商圈導覽</span></div></div>
+        </a>
 
-    <a href="https://www.gltjp.com/zh-hant/article/item/20962/" target="_blank" rel="noopener noreferrer">上野動物園完整指南（MATCHA）</a>
-    <small>園內地圖、必看動物、美食與伴手禮情報。</small>
-  </div>
-</section>
+        <a class="yt-card" href="https://youtu.be/AVNPQHsvAFg" target="_blank" rel="noopener noreferrer" title="澀谷景點必買必吃一次看（4K vlog）">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/AVNPQHsvAFg/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">澀谷景點必買必吃一次看（4K vlog）</span><span class="d">甜甜圈、品牌店、澀谷美食直擊</span></div></div>
+        </a>
 
-	  
-	  
+        <a class="yt-card" href="https://youtu.be/_x_ohb_hlNY" target="_blank" rel="noopener noreferrer" title="澀谷｜Tokyo Street View（Shibuya highlights）">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/_x_ohb_hlNY/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">澀谷｜Tokyo Street View（Shibuya highlights）</span><span class="d">澀谷街景實拍、Shibuya Sky 介紹</span></div></div>
+        </a>
 
-<!-- DAY5 (新版：錦糸町 → 晴空塔 → 錦糸町購物 → 成田) -->
-<section id="day5" class="day" aria-labelledby="day5title">
-  <div class="day-header">
-    <div class="day-title">
-      <h2 id="day5title">Day5｜2026/01/24（六） 錦糸町 → 晴空塔 → 錦糸町購物 → 前往成田</h2>
-      <p>主題：城市地標 × 景觀購物 × 旅程收尾 → 前往機場</p>
-    </div>
-    <div>
-      <a class="btn" href="https://maps.app.goo.gl/eypcgG9PhGyyUdVw7" target="_blank" rel="noopener noreferrer">🗺️ 晴空塔</a>
-      <a class="btn" href="https://maps.app.goo.gl/QDAk6swubFx7Px2M6" target="_blank" rel="noopener noreferrer">🗺️ 錦糸町</a>
-    </div>
-  </div>
+        <a class="yt-card" href="https://youtu.be/tUn6ZpDwxfs" target="_blank" rel="noopener noreferrer" title="澀谷攻略｜Shibuya Sky、交通與行程說明">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/tUn6ZpDwxfs/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">澀谷攻略｜Shibuya Sky、交通與行程說明</span><span class="d">展望台、餐廳與交通安排建議</span></div></div>
+        </a>
 
-  <div class="time-axis" aria-label="Day5 時間軸">
-    <div class="time-row">
-      <div class="t">09:30–11:00</div>
-      <div class="c">
-        <div class="title">出發前往晴空塔（Tokyo Skytree）</div>
-        <p>從錦糸町搭乘半藏門線或步行約 25 分鐘抵達押上（Skytree）站。沿途可感受東京東區日常街景，晴空塔的高塔身一路可見，是最佳導引。</p>
+        <a class="yt-card" href="https://youtu.be/fKxfW2nC2tg" target="_blank" rel="noopener noreferrer" title="東京銀座必逛10選（UNIQLO、伊東屋、GINZA SIX）">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/fKxfW2nC2tg/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">東京銀座必逛10選（UNIQLO、伊東屋、GINZA SIX）</span><span class="d">銀座步行者天國、旗艦店與下午茶推薦</span></div></div>
+        </a>
       </div>
-    </div>
 
-    <div class="time-row">
-      <div class="t">11:00–14:00</div>
-      <div class="c">
-        <div class="title">晴空塔（Tokyo Skytree）午餐與觀景</div>
-        <p>東京晴空塔高達 634 公尺，是東京最具代表性的地標。可提前預訂展望台門票，選擇「天望甲板」或「天望回廊」俯瞰城市景觀。<br>
-        周邊 <strong>TOKYO Solamachi</strong> 商場擁有多間人氣餐廳與紀念品店，如 Pokémon Center、卡娜赫拉專賣店、迪士尼商店等，適合午餐與最後採買。</p>
-        <p>
-          <a href="https://www.tokyo-skytree.jp/en/" target="_blank" rel="noopener noreferrer">東京晴空塔官方網站</a> · 
-          <a href="https://www.tokyo-solamachi.jp/" target="_blank" rel="noopener noreferrer">TOKYO Solamachi 商場</a> · 
-          <a href="https://www.bring-you.info/zh-tw/tokyo-solamachi" target="_blank" rel="noopener noreferrer">Solamachi 必逛攻略（Bring You）</a>
-        </p>
+      <div style="margin-top:12px;font-weight:900;color:var(--accent);">網站文章（參考）</div>
+      <div class="links-list">
+        <a href="https://tokyo.letsgojp.com/archives/87833/" target="_blank" rel="noopener noreferrer">銀座景點地圖2025（LetsGoJP）</a>
+        <small>銀座必去景點、百貨與美食懶人包。</small>
+        <a href="https://bobbyfun.tw/art-aquarium-museum/" target="_blank" rel="noopener noreferrer">銀座藝術水族館（Art Aquarium）介紹（BobbyFun）</a>
+        <small>展覽資訊與參觀建議（建議先訂票）。</small>
       </div>
-    </div>
+    </section>
 
-    <div class="time-row">
-      <div class="t">14:30–17:30</div>
-      <div class="c">
-        <div class="title">錦糸町周邊購物（整理行李 / 收尾採買）</div>
-        <p>返回錦糸町後，可前往 <strong>PARCO</strong>、<strong>ARCAKIT</strong>、<strong>Olinas</strong> 等商場，集結無印良品、Loft、GU、3COINS、大創與BicCamera等品牌。錦糸町車站周邊也有多間餐廳、超市與藥妝店，是出發前最後採買的好地方。</p>
-        <p>若需返回飯店取行李，建議於此時段順路安排，確保前往機場時間充裕。</p>
-        <p class="small">
-          <a href="https://kinshicho.parco.jp/" target="_blank" rel="noopener noreferrer">PARCO</a>（<a href="https://maps.app.goo.gl/Mp8SA3Bs5CRLuj5j9" target="_blank" rel="noopener noreferrer">地圖</a>）	 ｜ 
-          <a href="https://www.arcakit.com/" target="_blank" rel="noopener noreferrer">ARCAKIT</a>（<a href="https://maps.app.goo.gl/5N5WSFAkeAdBQctM8" target="_blank" rel="noopener noreferrer">地圖</a>）	 ｜
-		  <a href="https://www.olinas.jp/" target="_blank" rel="noopener noreferrer">Olinas</a>（<a href="https://maps.app.goo.gl/ivpcuLxk5igx64x67" target="_blank" rel="noopener noreferrer">地圖</a>）	
-        </p>
+    <!-- DAY4 -->
+    <section id="day4" class="day" aria-labelledby="day4title">
+      <div class="day-header">
+        <div class="day-title">
+          <h2 id="day4title">Day4｜2026/01/23（五） 吉祥寺 → 下北澤 → 新宿</h2>
+          <p>主題：文青 × 悠閒 × 都會夜色（順序：吉祥寺→下北澤→新宿）</p>
+        </div>
+        <div>
+          <a class="btn" href="https://maps.app.goo.gl/PqDkCV3yyMjE5Cfw9" target="_blank" rel="noopener noreferrer">🗺️ 吉祥寺</a>
+          <a class="btn" href="https://maps.app.goo.gl/2388GXEVWs17cZtE7" target="_blank" rel="noopener noreferrer">🗺️ 下北澤</a>
+          <a class="btn" href="https://maps.app.goo.gl/bzhviFX6K3XFt1Lh9" target="_blank" rel="noopener noreferrer">🗺️ 新宿</a>
+        </div>
       </div>
-    </div>
 
-    <div class="time-row">
-      <div class="t">18:30–19:30</div>
-      <div class="c">
-        <div class="title">前往成田機場（TR875 回程 21:10 起飛）</div>
-        <p>建議提前出發，預留退稅與安檢時間。可選擇搭乘 <strong>Narita Express（東京站轉乘）</strong> 或 <strong>京成 Skyliner（押上／日暮里出發）</strong> 前往成田機場，車程約 60–70 分鐘。<br>
-        建議於航班起飛前至少 2–2.5 小時抵達機場。</p>
+      <div class="time-axis" aria-label="Day4 時間軸">
+        <div class="time-row">
+          <div class="t">09:30–15:00</div>
+          <div class="c">
+            <div class="title">吉祥寺（井之頭恩賜公園／SUN ROAD）</div>
+            <p>放慢腳步：井之頭恩賜公園散步、商店街甜點、麵包店與雜貨小舖慢逛。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">15:30–17:30</div>
+          <div class="c">
+            <div class="title">下北澤（文青古著 / 二手小物）</div>
+            <p>探索小巷古著店、文青雜貨與咖啡廳。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">16:30–20:00</div>
+          <div class="c">
+            <div class="title">新宿（百貨購物 / 歌舞伎町夜景）</div>
+            <p>逛小田急、京王、Bic Camera、伊勢丹等百貨；夜間可走訪歌舞伎町。</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片</div>
-  <div class="yt-row" id="day5-videos" aria-label="Day5 影片區">
-    <a class="yt-card" href="https://youtu.be/Jup1B7sVI7Q" target="_blank" rel="noopener noreferrer" title="東京晴空塔觀景台與商場攻略">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/Jup1B7sVI7Q/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">東京晴空塔攻略</span><span class="d">交通建議、觀景台導覽與必逛商場</span></div></div>
-    </a>
+      <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片</div>
+      <div class="yt-row" id="day4-videos" aria-label="Day4 影片區">
+        <a class="yt-card" href="https://youtu.be/G_78GRzJ5ks" target="_blank" rel="noopener noreferrer" title="吉祥寺、下北澤重點推薦">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/G_78GRzJ5ks/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">吉祥寺 &amp; 下北澤</span><span class="d">吉祥寺、下北澤重點推薦與景點</span></div></div>
+        </a>
 
-    <a class="yt-card" href="https://youtu.be/oE9MuCAZP5I" target="_blank" rel="noopener noreferrer" title="錦糸町ARCAKIT購物與戰利品分享">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/oE9MuCAZP5I/maxresdefault.jpg" alt=""></div>
+        <a class="yt-card" href="https://youtu.be/0txLGwrfa-M" target="_blank" rel="noopener noreferrer" title="吉祥寺商店街攻略">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/0txLGwrfa-M/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">吉祥寺商店街攻略</span><span class="d">商店街美食與必買</span></div></div>
+        </a>
 
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">錦糸町 ARCAKIT 採買</span><span class="d">大創、3COINS、無印良品逛街指南</span></div></div>
-    </a>
+        <a class="yt-card" href="https://youtu.be/3rVqsgV6WnY" target="_blank" rel="noopener noreferrer" title="吉祥寺一日遊行程分享">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/3rVqsgV6WnY/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">吉祥寺在地美食</span><span class="d">在地人推薦吉祥寺美食</span></div></div>
+        </a>
 
-    <a class="yt-card" href="https://youtu.be/hdyoe0MJpaI" target="_blank" rel="noopener noreferrer" title="錦糸町自由行紀錄">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/hdyoe0MJpaI/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">錦糸町＋人形町一日遊</span><span class="d">實際動線與在地美食推薦</span></div></div>
-    </a>
+        <a class="yt-card" href="https://youtu.be/AATgSx-JVd0" target="_blank" rel="noopener noreferrer" title="新宿自由行攻略">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/AATgSx-JVd0/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">新宿全攻略</span><span class="d">新宿景點總整理</span></div></div>
+        </a>
 
-    <a class="yt-card" href="https://youtu.be/kp2Prt6jbkc" target="_blank" rel="noopener noreferrer" title="東京住宿與錦糸町生活圈介紹">
-      <div class="yt-thumb"><img src="https://img.youtube.com/vi/kp2Prt6jbkc/maxresdefault.jpg" alt=""></div>
-      <div class="meta-wrap"><div class="yt-meta"><span class="t">錦糸町住宿圈攻略</span><span class="d">交通方便、購物與美食全攻略</span></div></div>
-    </a>
-  </div>
+        <a class="yt-card" href="https://youtu.be/rRyCHK0DZBg" target="_blank" rel="noopener noreferrer" title="新宿夜生活街景">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/rRyCHK0DZBg/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">新宿夜生活</span><span class="d">歌舞伎町 &amp; 夜生活</span></div></div>
+        </a>
+      </div>
 
-  <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考文章</div>
-  <div class="links-list">
-    <a href="https://www.bring-you.info/zh-tw/tokyo-solamachi" target="_blank" rel="noopener noreferrer">【晴空塔城購物】TOKYO Solamachi 必逛店與紀念品指南</a>
-    <small>介紹商場樓層、人氣餐廳與伴手禮品牌。</small>
+      <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考文章</div>
+      <div class="links-list">
+        <a href="https://bobbyfun.tw/kichijoji/" target="_blank" rel="noopener noreferrer">吉祥寺美食與景點（BobbyFun）</a>
+        <small>井之頭公園與商店街推薦。</small>
+        <a href="https://tw.wamazing.com/media/article/a-3044/" target="_blank" rel="noopener noreferrer">下北澤 特色介紹（Wamazing）</a>
+        <small>下北澤文青小店、購物路線建議。</small>
+      </div>
+    </section>
 
-    <a href="https://kinshicho.parco.jp/" target="_blank" rel="noopener noreferrer">錦糸町 PARCO 官方網站</a>
-    <small>百貨樓層資訊與餐廳列表。</small>
+    <!-- DAY5 -->
+    <section id="day5" class="day" aria-labelledby="day5title">
+      <div class="day-header">
+        <div class="day-title">
+          <h2 id="day5title">Day5｜2026/01/24（六） 阿美橫丁（上野） → 晴空塔 → 錦糸町購物 → 前往成田</h2>
+          <p>主題：庶民市場 × 晴空塔景觀 × 錦糸町購物收尾 → 機場出發</p>
+        </div>
+        <div>
+          <a class="btn" href="https://maps.app.goo.gl/FW1mkRRX1jeHp5GH6" target="_blank" rel="noopener noreferrer">🗺️ 阿美橫丁</a>
+          <a class="btn" href="https://maps.app.goo.gl/eypcgG9PhGyyUdVw7" target="_blank" rel="noopener noreferrer">🗺️ 晴空塔</a>
+          <a class="btn" href="https://maps.app.goo.gl/QDAk6swubFx7Px2M6" target="_blank" rel="noopener noreferrer">🗺️ 錦糸町</a>
+        </div>
+      </div>
 
-    <a href="https://www.arcakit.com/" target="_blank" rel="noopener noreferrer">錦糸町 ARCAKIT</a>
-    <small>車站直通百貨，含 Loft、無印良品與大創。</small>
-  </div>
-</section>
+      <div class="time-axis" aria-label="Day5 時間軸">
+        <div class="time-row">
+          <div class="t">09:30–11:30</div>
+          <div class="c">
+            <div class="title">阿美橫丁（上野 Ameyoko）逛市集</div>
+            <p>市集販售藥妝、乾貨、小吃、伴手禮；適合早上出發避開擁擠。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">12:30–14:30</div>
+          <div class="c">
+            <div class="title">移動 → 晴空塔（Skytree）午餐或觀景</div>
+            <p class="small">晴空塔周邊商場有不少美食與伴手禮；上塔建議事先訂票並預留排隊時間。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">15:00–17:30</div>
+          <div class="c">
+            <div class="title">錦糸町周邊購物（回飯店拿行李 / 收尾）</div>
+            <p class="small">錦糸町有 PARCO、商店街與餐廳，可在此做最後採買或整理行李。</p>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <div class="t">18:30–19:30</div>
+          <div class="c">
+            <div class="title">前往成田機場（TR875 回程 21:10 起飛）</div>
+            <p class="small">建議至少在航班起飛前 2–2.5 小時抵達機場，計算交通與退稅時間，提早出發為佳。</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;font-weight:900;color:var(--accent);">參考影片</div>
+      <div class="yt-row" id="day5-videos" aria-label="Day5 影片區">
+        <a class="yt-card" href="https://youtu.be/EEVgJxiQlvI" target="_blank" rel="noopener noreferrer" title="上野阿美橫完全路線攻略">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/EEVgJxiQlvI/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">上野阿美橫攻略</span><span class="d">阿美橫路線圖、觀光客建議與必買清單</span></div></div>
+        </a>
+
+        <a class="yt-card" href="https://youtu.be/yDxaS32g3vU" target="_blank" rel="noopener noreferrer" title="阿美橫實拍">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/yDxaS32g3vU/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">阿美橫實拍</span><span class="d">阿美橫丁市集實拍</span></div></div>
+        </a>
+
+        <a class="yt-card" href="https://youtu.be/ghvdOVYZRVE" target="_blank" rel="noopener noreferrer" title="上野自由行攻略">
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/ghvdOVYZRVE/maxresdefault.jpg" alt=""></div>
+          <div class="meta-wrap"><div class="yt-meta"><span class="t">上野美食與景點</span><span class="d">上野美食與景點整理</span></div></div>
+        </a>
+      </div>
+
+      <div class="refs" aria-label="Day5 參考資料" style="margin-top:12px;">
+        <div class="ref">
+          <a href="https://bobbyfun.tw/2024-01-05-2670/" target="_blank" rel="noopener noreferrer">阿美橫丁（BobbyFun）</a>
+          <small>市集、伴手禮與小吃推薦。</small>
+        </div>
+        <div class="ref">
+          <a href="https://www.tokyo-skytree.jp/en/" target="_blank" rel="noopener noreferrer">東京晴空塔（官方）</a>
+          <small>展望台票務與商場資訊（官方頁面）。</small>
+        </div>
+      </div>
+    </section>
 
     <!-- TRANSPORT & NOTES -->
     <div class="aside" aria-labelledby="asideTitle">
-      <div id="asideTitle" style="font-weight:900;color:#2b5b6f;margin-bottom:8px;">交通建議 &amp; 住宿說明</div>
-      <div class="aside-grid">
-        <div class="transport" aria-label="交通建議">
-          <div class="h">交通建議</div>
+      <div id="asideTitle" style="font-weight:900;color:#2b5b6f;margin-bottom:8px;">交通建議 & 住宿說明</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div>
+          <div style="font-weight:800;color:var(--accent);margin-bottom:6px;">交通建議</div>
           <ul>
             <li>建議攜帶 Suica / PASMO：市內搭乘與小額消費皆方便。</li>
             <li>若行程多跨城（如鎌倉/橫濱/川崎），可評估購買一日券或使用 JR 東日本的短程票券。</li>
             <li>從錦糸町往成田建議預留 90–150 分鐘；視交通方式（Narita Express / 機場巴士 / 利木津）調整。</li>
-            <li>前往鎌倉之建議：錦糸町 → JR（總武快速 / Sobu Rapid）→ 東京/品川 → 轉乘 JR 橫須賀線直達鎌倉（通常需在東京或品川轉乘一次）。</li>
+            <li>前往鎌倉之建議：錦糸町 → JR（總武快速/Sobu Rapid）→ 東京/品川 → 轉乘JR橫須賀線直達鎌倉（通常需在東京或品川轉乘一次）。</li>
           </ul>
         </div>
-
-        <div class="accommodation" aria-label="住宿說明">
+        <div>
           <div style="font-weight:800;color:var(--accent);margin-bottom:6px;">住宿（據點）</div>
-          <p style="margin:0;color:#111;">
+          <p style="margin:0;color:#333;">
             Tobu Hotel Levant Tokyo（錦糸町）交通方便、靠近地鐵與 JR，適合以東京市區為基地。若想早出發鎌倉，建議預留轉乘時間並避開早高峰。
           </p>
         </div>
